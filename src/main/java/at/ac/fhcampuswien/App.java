@@ -40,7 +40,25 @@ public class App {
     //todo Task 2
     public void stairs(){
         // input your solution here
-        // --> System.out.printf(...); --> Anschauen
+        // --> System.out.printf(...); -> Anschauen
+        Scanner scanner2 = new Scanner(System.in);
+        int lines = scanner2.nextInt();
+        if (lines <= 0) {
+            System.out.println("n: Invalid number!");
+        } else {
+            // System.out.print("n: 1");
+            for (int i = 0; i < lines; i++) {
+                for (int j = 1; j <= i; j++) {
+                    if (i == 1) {
+                        System.out.print("n: " + i);
+                    } else {
+                        int x = i+j;
+                        System.out.print(x + " ");
+                    }
+                }
+                System.out.println();
+            }
+        }
     }
 
     //todo Task 3
@@ -61,6 +79,17 @@ public class App {
         --> rows - i Möglichkeit
         --> stern * 2 - 1
         */
+        int lines = 6;
+        for (int i=1; i <= lines; i++) {
+
+            for (int j=1;j<= lines-i;j++) {
+                System.out.print(" ");
+            }
+            for (int k=1; k<=(2*i-1); k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 
     //todo Task 4
