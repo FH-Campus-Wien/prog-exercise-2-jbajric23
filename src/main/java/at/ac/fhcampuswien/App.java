@@ -92,7 +92,31 @@ public class App {
         // var sum definieren = 0;
         // Scanner in einer Schleife
         // Laufende Summenbildung in der Schleife --> sum += grade;
+        boolean loop = true;
+        int i = 1;
+        double sum = 0;
+        double avg = 0;
+        int neg = 0;
+        Scanner scanner5 = new Scanner(System.in);
+        while (loop) {
+            int grade = scanner5.nextInt();
+            avg = sum/i;
+            if (grade >= 1 && grade <= 5) {
+                sum += grade;
+                i++;
+                loop = false;
+            } else if (grade == 5) {
+                neg++;
+                loop = false;
+            } else if (grade == 0) {
+                System.out.println(" Mark 1: Mark 2: Mark 3: Mark 4: Average: " + avg);
+                System.out.println(" Negative Marks: " + neg);
+                break;
+            } else
+                System.out.println("Invalid mark!");
+                loop = false;
 
+        }
     }
 
     //todo Task 6
