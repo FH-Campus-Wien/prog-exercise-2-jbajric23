@@ -20,7 +20,7 @@ public class App {
             num[i] = scanner1.nextDouble();
             if (num[0] <= 0 && i == 0) {
                 System.out.println("Number " + j + ": No number entered.");
-                break;
+                loop = false;
             } else if (num[i] <= 0) {
                 Arrays.sort(num);
                 double maxNum = num[num.length - 1];
@@ -30,7 +30,7 @@ public class App {
                 int x1 = j-1;
                 int x2 = j-2;
                 System.out.println("Number " + x2 + ": Number " + x1 + ": Number " + j + ": The largest number is " + roundOff);
-                break;
+                loop = false;
             }
             i++;
         } while (loop);
