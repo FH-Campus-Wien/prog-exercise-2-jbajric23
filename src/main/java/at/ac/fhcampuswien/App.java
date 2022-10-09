@@ -46,14 +46,15 @@ public class App {
         if (lines <= 0) {
             System.out.println("n: Invalid number!");
         } else {
-            // System.out.print("n: 1");
-            for (int i = 0; i < lines; i++) {
+            int count2 = 1;
+            for (int i = 1; i <= lines; i++) {
                 for (int j = 1; j <= i; j++) {
-                    if (i == 1) {
-                        System.out.print("n: " + i);
+                    if (count2 == 1) {
+                        System.out.print("n: " + count2 + " ");
+                        count2++;
                     } else {
-                        int x = i+j;
-                        System.out.print(x + " ");
+                        System.out.print(count2 + " ");
+                        count2++;
                     }
                 }
                 System.out.println();
@@ -64,25 +65,10 @@ public class App {
     //todo Task 3
     public void printPyramid(){
         // input your solution here
-        /*
-        final int rows = 8;
-        final int cols = 8;
-        for(i=0;i<rows;i++) {
-        for(j=0,j<cols,i++) {
-        if((i+j) % 2 == 0) {
-        Sop("* ");
-        } else {
-        sop("  "); }
-        }
-        Sop();
-        ---> Schachbrettmuster
-        --> rows - i Möglichkeit
-        --> stern * 2 - 1
-        */
         int lines = 6;
         for (int i=1; i <= lines; i++) {
 
-            for (int j=1;j<= lines-i;j++) {
+            for (int j=1; j<= lines-i; j++) {
                 System.out.print(" ");
             }
             for (int k=1; k<=(2*i-1); k++) {
