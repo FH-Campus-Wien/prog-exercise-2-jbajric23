@@ -80,16 +80,37 @@ public class App {
 
     //todo Task 4
     public void printRhombus(){
-        // input your solution here
-        // c = scan.next().charAT(0); = H
-        // c--;  --> sop(c) = G -> F -> E
-        // unterteilen in oben und unten
+        // Initializtion of the variables
+        Scanner scanner4 = new Scanner(System.in);
+        int hgt = scanner4.nextInt();
+        char c = scanner4.next().charAt(0);
+        // Top loop - up
+        for (int i = 0; i < hgt/2; i++) {
+            int fr = (hgt-i*2)/2;
+            for (int j = 0; j < fr; j++) System.out.print(" ");
+            for (int j = 0; j <= i*2; j++) {
+                if (j > ((i*2)/2)) System.out.print((char)(c+i-j));
+                else System.out.print((char)(c-i+j));
+            }
+            for (int j = 0; j < fr; j++) System.out.print(" ");
+            System.out.println();
+        }
+        // Bottom loop - down
+        for (int i = hgt/2; i >= 0; i--) {
+            int fr = (hgt - i * 2) / 2;
+            for (int j = 0; j < fr; j++) System.out.print(" ");
+            for (int j = 0; j <= i * 2; j++) {
+                if (j > ((i * 2) / 2)) System.out.print((char)(c+i-j));
+                else System.out.print((char)(c-i+j));
+            }
+            for (int j = 0; j < fr; j++) System.out.print(" ");
+            System.out.println();
+        }
     }
 
     //todo Task 5
-    // now solved 
     public void marks(){
-        // input your solution heres
+        // input your solution here
         boolean loop = true;
         int i = 1;
         double sum = 0;
