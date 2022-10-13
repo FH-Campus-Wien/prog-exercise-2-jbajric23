@@ -1,5 +1,6 @@
 package at.ac.fhcampuswien;
 
+import java.awt.*;
 import java.util.Scanner;
 import java.util.Arrays;
 import java.math.BigDecimal;
@@ -67,7 +68,6 @@ public class App {
         // input your solution here
         int lines = 6;
         for (int i=1; i <= lines; i++) {
-
             for (int j=1; j<= lines-i; j++) {
                 System.out.print(" ");
             }
@@ -83,28 +83,35 @@ public class App {
         // Initializtion of the variables
         Scanner scanner4 = new Scanner(System.in);
         int hgt = scanner4.nextInt();
+        System.out.print("h: ");
         char c = scanner4.next().charAt(0);
-        // Top loop - up
-        for (int i = 0; i < hgt/2; i++) {
-            int fr = (hgt-i*2)/2;
-            for (int j = 0; j < fr; j++) System.out.print(" ");
-            for (int j = 0; j <= i*2; j++) {
-                if (j > ((i*2)/2)) System.out.print((char)(c+i-j));
-                else System.out.print((char)(c-i+j));
+        System.out.print("c: ");
+        // Condition with modulo-division
+        if (hgt%2 == 0) {
+            System.out.print("Invalid number!" + System.lineSeparator());
+        } else {
+            // Top loop - up
+            for (int i = 0; i < hgt / 2; i++) {
+                int fr = (hgt - i * 2) / 2;
+                for (int j = 0; j < fr; j++) System.out.print(" ");
+                for (int j = 0; j <= i * 2; j++) {
+                    if (j > ((i * 2) / 2)) System.out.print((char)(c + i - j));
+                    else System.out.print((char)(c - i + j));
+                }
+                for (int j = 0; j < fr; j++) System.out.print("");
+                System.out.println();
             }
-            for (int j = 0; j < fr; j++) System.out.print(" ");
-            System.out.println();
-        }
-        // Bottom loop - down
-        for (int i = hgt/2; i >= 0; i--) {
-            int fr = (hgt - i * 2) / 2;
-            for (int j = 0; j < fr; j++) System.out.print(" ");
-            for (int j = 0; j <= i * 2; j++) {
-                if (j > ((i * 2) / 2)) System.out.print((char)(c+i-j));
-                else System.out.print((char)(c-i+j));
+            // Bottom loop - down
+            for (int i = hgt / 2; i >= 0; i--) {
+                int fr = (hgt - i * 2) / 2;
+                for (int j = 0; j < fr; j++) System.out.print(" ");
+                for (int j = 0; j <= i * 2; j++) {
+                    if (j > ((i * 2) / 2)) System.out.print((char) (c + i - j));
+                    else System.out.print((char) (c - i + j));
+                }
+                for (int j = 0; j < fr; j++) System.out.print("");
+                System.out.println();
             }
-            for (int j = 0; j < fr; j++) System.out.print(" ");
-            System.out.println();
         }
     }
 
@@ -147,8 +154,24 @@ public class App {
 
     //todo Task 6
     public void happyNumbers(){
-        // input your solution here
         // unglückliche Zahlen (4,16,37,58,89,145,42,20,4)
+        Scanner scan6 = new Scanner(System.in);
+        int hapnum = scan6.nextInt();
+        System.out.print("n: ");
+        int helpnum = 0, summe = 0;
+        //Calculates the sum of squares of digits
+        if (hapnum != 1 && hapnum != 4) {
+            if (hapnum > 0) {
+               helpnum = hapnum % 10;
+               summe = summe + (helpnum * helpnum);
+               hapnum = hapnum / 10;
+            }
+        }
+        if (summe == 4) {
+            System.out.print("Sad number!" + System.lineSeparator());
+        } else {
+            System.out.print("Happy number!" + System.lineSeparator());
+        }
     }
 
     public static void main(String[] args){
