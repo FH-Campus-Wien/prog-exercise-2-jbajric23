@@ -87,6 +87,7 @@ public class App {
     }
 
     //todo Task 5
+    // now solved 
     public void marks(){
         // input your solution heres
         boolean loop = true;
