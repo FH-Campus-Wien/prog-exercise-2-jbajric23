@@ -1,11 +1,7 @@
 package at.ac.fhcampuswien;
 
-import java.awt.*;
 import java.util.Scanner;
 import java.util.Arrays;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-
 
 public class App {
 
@@ -17,7 +13,6 @@ public class App {
         int i = 0;
         do {
             int j = i+1;
-            //System.out.println("Number " + j + ": ");
             num[i] = scanner1.nextDouble();
             if (num[0] <= 0 && i == 0) {
                 System.out.println("Number " + j + ": No number entered.");
@@ -25,12 +20,9 @@ public class App {
             } else if (num[i] <= 0) {
                 Arrays.sort(num);
                 double maxNum = num[num.length - 1];
-                // Next two Lines -> Source: https://www.techiedelight.com/round-up-float-with-2-decimal-places-java/
-                BigDecimal bd = new BigDecimal(maxNum);
-                BigDecimal roundOff = bd.setScale(2, RoundingMode.FLOOR);
                 int x1 = j-1;
                 int x2 = j-2;
-                System.out.println("Number " + x2 + ": Number " + x1 + ": Number " + j + ": The largest number is " + roundOff);
+                System.out.println("Number " + x2 + ": Number " + x1 + ": Number " + j + ": The largest number is " + String.format("%.2f", maxNum)                         );
                 loop = false;
             }
             i++;
@@ -41,7 +33,6 @@ public class App {
     //todo Task 2
     public void stairs(){
         // input your solution here
-        // --> System.out.printf(...); -> Anschauen
         Scanner scanner2 = new Scanner(System.in);
         int lines = scanner2.nextInt();
         if (lines <= 0) {
@@ -154,7 +145,6 @@ public class App {
 
     //todo Task 6
     public void happyNumbers(){
-        // unglückliche Zahlen (4,16,37,58,89,145,42,20,4)
         Scanner scan6 = new Scanner(System.in);
         int hapnum = scan6.nextInt();
         System.out.print("n: ");
