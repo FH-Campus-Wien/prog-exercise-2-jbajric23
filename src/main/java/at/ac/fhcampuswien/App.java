@@ -88,10 +88,7 @@ public class App {
 
     //todo Task 5
     public void marks(){
-        // input your solution here
-        // var sum definieren = 0;
-        // Scanner in einer Schleife
-        // Laufende Summenbildung in der Schleife --> sum += grade;
+        // input your solution heres
         boolean loop = true;
         int i = 1;
         double sum = 0;
@@ -100,23 +97,30 @@ public class App {
         Scanner scanner5 = new Scanner(System.in);
         while (loop) {
             int grade = scanner5.nextInt();
-            avg = sum/i;
-            if (grade >= 1 && grade <= 5) {
+            if (grade >= 1 && grade < 5) {
                 sum += grade;
+                avg = sum/i;
+                System.out.print("Mark " + i + ": ");
                 i++;
-                loop = false;
+                continue;
             } else if (grade == 5) {
+                sum += grade;
+                avg = sum/i;
                 neg++;
-                loop = false;
+                System.out.print("Mark " + i + ": ");
+                i++;
+                continue;
             } else if (grade == 0) {
-                System.out.println(" Mark 1: Mark 2: Mark 3: Mark 4: Average: " + avg);
-                System.out.println(" Negative Marks: " + neg);
+                System.out.print("Mark " + i + ": ");
                 break;
-            } else
-                System.out.println("Invalid mark!");
-                loop = false;
-
+            } else if (grade < 0 || grade > 5){
+                System.out.print("Mark " + i + ": ");
+                System.out.print("Invalid mark!" + System.lineSeparator());
+                continue;
+            }
         }
+        System.out.print("Average: " + String.format("%.2f", avg) + System.lineSeparator());
+        System.out.print("Negative marks: " + neg + System.lineSeparator());
     }
 
     //todo Task 6
